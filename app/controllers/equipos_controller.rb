@@ -90,17 +90,19 @@ class EquiposController < ApplicationController
         Jugador.all.each do |j|      
           if params[j.id.to_s] then
             if params[j.id.to_s] == "on" then
-              # CREAR RELACION EQUIPO JUGADOR         
               
+              # CREAR RELACION EQUIPO JUGADOR         
               JugadorEquipo.create(:equipo_id => @idEquipo, :jugador_id => j.id, :fecha_desde => "", :fecha_hasta => "")
+              
               # PONER JUGADOR VACANTE = FALSE
+              j.disponible = false
+              j.save
+
             end
           end
         end
     end
-
     redirect_to :controller => 'equipos', :action => 'show', :id => @idEquipo
-
   end
 
 

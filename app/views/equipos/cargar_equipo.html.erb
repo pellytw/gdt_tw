@@ -4,7 +4,7 @@
     <ul>
     <% Jugador.where("posicion_id=? and disponible=?",  Posicion.where(:nombre => "ARQUERO").first.id, true).each do |j|%>
       <li>
-        <input type="checkbox" name="<%= j.id %>"> <%= j %><br>
+        <input type="checkbox" name="<%= j.id %>"> <%= j %></input><br>
       </li>
     <% end %>
     </ul>

@@ -9,6 +9,7 @@
   <b>Participante:</b>
   <%= @equipo.participante %>
 </p>
+<a href="<%=url_for equipos_cargar_equipo_path%>/<%= @equipo.id%>" class="btn btn-small btn-success"><i class="icon-plus"></i>  Cargar Jugadores</a>
 
 <p class="lead">ARQUEROS</p>
 <ul>
@@ -26,7 +27,7 @@
 <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
   
   	<% if (j.jugador.posicion_id == Posicion.where(:nombre => "DEFENSOR CENTRAL").first.id) then%>
-   		<li><%= j.jugador %><br></li>
+   		<li><%= j.jugador %>  <a href="" class="btn btn-mini btn-danger"><i class="icon-remove"></i></a><br></li>
    	<% end %>
   
 <% end %>
