@@ -1,0 +1,29 @@
+<h1>Listado de fechas</h1>
+
+<table>
+  <tr>
+    <th>Numero</th>
+    <th>Nombre torneo</th>
+    <th>Fecha desde</th>
+    <th>Fecha hasta</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fechas.each do |fecha| %>
+  <tr>
+    <td><%= fecha.numero %></td>
+    <td><%= fecha.nombre_torneo %></td>
+    <td><%= fecha.fecha_desde %></td>
+    <td><%= fecha.fecha_hasta %></td>
+    <td><%= link_to 'Ver', fecha %></td>
+    <td><%= link_to 'Editar', edit_fecha_path(fecha) %></td>
+    <td><%= link_to 'Eliminar', fecha, method: :delete, data: { confirm: 'Está seguro que desea eliminar?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva Fecha', new_fecha_path %>

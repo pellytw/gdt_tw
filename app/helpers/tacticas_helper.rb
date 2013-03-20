@@ -1,0 +1,2 @@
+module TacticasHelper
+end

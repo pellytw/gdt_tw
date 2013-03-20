@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  numero: 1
+  nombre_torneo: MyString
+  fecha_desde: 2013-03-08 11:23:10
+  fecha_hasta: 2013-03-08 11:23:10
+
+two:
+  numero: 1
+  nombre_torneo: MyString
+  fecha_desde: 2013-03-08 11:23:10
+  fecha_hasta: 2013-03-08 11:23:10

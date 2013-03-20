@@ -1,0 +1,29 @@
+<h1>Listado de participantes</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Apodo</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @participantes.each do |participante| %>
+  <tr>
+    <td><%= participante.nombre %></td>
+    <td><%= participante.apellido %></td>
+    <td><%= participante.apodo %></td>
+    <td><%= participante.user_id %></td>
+    <td><%= link_to 'Ver', participante %></td>
+    <td><%= link_to 'Editar', edit_participante_path(participante) %></td>
+    <td><%= link_to 'Eliminar', participante, method: :delete, data: { confirm: 'Está seguro que desea eliminar?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Participante', new_participante_path %>

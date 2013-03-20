@@ -1,0 +1,77 @@
+<%= form_for(@estado) do |f| %>
+  <% if @estado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@estado.errors.count, "error") %> prohibited this estado from being saved:</h2>
+
+      <ul>
+      <% @estado.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titular %><br />
+    <%= f.check_box :titular %>
+  </div>
+  <div class="field">
+    <%= f.label :no_suma_puntos %><br />
+    <%= f.check_box :no_suma_puntos %>
+  </div>
+  <div class="field">
+    <%= f.label :capitan %><br />
+    <%= f.check_box :capitan %>
+  </div>
+  <div class="field">
+    <%= f.label :goles %><br />
+    <%= f.number_field :goles %>
+  </div>
+  <div class="field">
+    <%= f.label :goles_de_penal %><br />
+    <%= f.number_field :goles_de_penal %>
+  </div>
+  <div class="field">
+    <%= f.label :figura %><br />
+    <%= f.check_box :figura %>
+  </div>
+  <div class="field">
+    <%= f.label :chenemigo %><br />
+    <%= f.check_box :chenemigo %>
+  </div>
+  <div class="field">
+    <%= f.label :roja %><br />
+    <%= f.check_box :roja %>
+  </div>
+  <div class="field">
+    <%= f.label :valla_invicta %><br />
+    <%= f.check_box :valla_invicta %>
+  </div>
+  <div class="field">
+    <%= f.label :penales_errados %><br />
+    <%= f.number_field :penales_errados %>
+  </div>
+  <div class="field">
+    <%= f.label :penales_atajados %><br />
+    <%= f.number_field :penales_atajados %>
+  </div>
+  <div class="field">
+    <%= f.label :puntaje_dario %><br />
+    <%= f.text_field :puntaje_dario %>
+  </div>
+  <div class="field">
+    <%= f.label :puntaje_total_fecha %><br />
+    <%= f.text_field :puntaje_total_fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_id %><br />
+    <%= f.number_field :fecha_id %>
+  </div>
+  <div class="field">
+    <%= f.label :jugador_id %><br />
+    <%= f.number_field :jugador_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

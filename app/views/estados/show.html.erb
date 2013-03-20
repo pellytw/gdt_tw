@@ -1,0 +1,80 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Titular:</b>
+  <%= @estado.titular %>
+</p>
+
+<p>
+  <b>No suma puntos:</b>
+  <%= @estado.no_suma_puntos %>
+</p>
+
+<p>
+  <b>Capitan:</b>
+  <%= @estado.capitan %>
+</p>
+
+<p>
+  <b>Goles:</b>
+  <%= @estado.goles %>
+</p>
+
+<p>
+  <b>Goles de penal:</b>
+  <%= @estado.goles_de_penal %>
+</p>
+
+<p>
+  <b>Figura:</b>
+  <%= @estado.figura %>
+</p>
+
+<p>
+  <b>Chenemigo:</b>
+  <%= @estado.chenemigo %>
+</p>
+
+<p>
+  <b>Roja:</b>
+  <%= @estado.roja %>
+</p>
+
+<p>
+  <b>Valla invicta:</b>
+  <%= @estado.valla_invicta %>
+</p>
+
+<p>
+  <b>Penales errados:</b>
+  <%= @estado.penales_errados %>
+</p>
+
+<p>
+  <b>Penales atajados:</b>
+  <%= @estado.penales_atajados %>
+</p>
+
+<p>
+  <b>Puntaje dario:</b>
+  <%= @estado.puntaje_dario %>
+</p>
+
+<p>
+  <b>Puntaje total fecha:</b>
+  <%= @estado.puntaje_total_fecha %>
+</p>
+
+<p>
+  <b>Fecha:</b>
+  <%= @estado.fecha_id %>
+</p>
+
+<p>
+  <b>Jugador:</b>
+  <%= @estado.jugador_id %>
+</p>
+
+
+<%= link_to 'Editar', edit_estado_path(@estado) %> |
+<%= link_to 'Atrás', estados_path %>

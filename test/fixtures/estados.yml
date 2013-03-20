@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  titular: false
+  no_suma_puntos: false
+  capitan: false
+  goles: 1
+  goles_de_penal: 1
+  figura: false
+  chenemigo: false
+  roja: false
+  valla_invicta: false
+  penales_errados: 1
+  penales_atajados: 1
+  puntaje_dario: 1.5
+  puntaje_total_fecha: 1.5
+  fecha_id: 1
+  jugador_id: 1
+
+two:
+  titular: false
+  no_suma_puntos: false
+  capitan: false
+  goles: 1
+  goles_de_penal: 1
+  figura: false
+  chenemigo: false
+  roja: false
+  valla_invicta: false
+  penales_errados: 1
+  penales_atajados: 1
+  puntaje_dario: 1.5
+  puntaje_total_fecha: 1.5
+  fecha_id: 1
+  jugador_id: 1

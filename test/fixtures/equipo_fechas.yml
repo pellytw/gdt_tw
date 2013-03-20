@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  equipo_id: 1
+  jugador_id: 1
+  fecha_id: 1
+  fecha_desde: 2013-03-08
+  fecha_hasta: 2013-03-08
+
+two:
+  equipo_id: 1
+  jugador_id: 1
+  fecha_id: 1
+  fecha_desde: 2013-03-08
+  fecha_hasta: 2013-03-08

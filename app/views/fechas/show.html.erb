@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Numero:</b>
+  <%= @fecha.numero %>
+</p>
+
+<p>
+  <b>Nombre torneo:</b>
+  <%= @fecha.nombre_torneo %>
+</p>
+
+<p>
+  <b>Fecha desde:</b>
+  <%= @fecha.fecha_desde %>
+</p>
+
+<p>
+  <b>Fecha hasta:</b>
+  <%= @fecha.fecha_hasta %>
+</p>
+
+
+<%= link_to 'Editar', edit_fecha_path(@fecha) %> |
+<%= link_to 'Atrás', fechas_path %>

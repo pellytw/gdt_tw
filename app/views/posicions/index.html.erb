@@ -1,0 +1,23 @@
+<h1>Listado de posiciones</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Nombre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posicions.each do |posicion| %>
+  <tr>
+    <td><%= posicion.nombre %></td>
+    <td><%= link_to 'Ver', posicion %></td>
+    <td><%= link_to 'Editar', edit_posicion_path(posicion) %></td>
+    <td><%= link_to 'Eliminar', posicion, method: :delete, data: { confirm: 'Está seguro que desea eliminar?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva Posicion', new_posicion_path %>

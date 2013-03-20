@@ -1,0 +1,51 @@
+<h1>Listado de estados</h1>
+
+<table>
+  <tr>
+    <th>Titular</th>
+    <th>No suma puntos</th>
+    <th>Capitan</th>
+    <th>Goles</th>
+    <th>Goles de penal</th>
+    <th>Figura</th>
+    <th>Chenemigo</th>
+    <th>Roja</th>
+    <th>Valla invicta</th>
+    <th>Penales errados</th>
+    <th>Penales atajados</th>
+    <th>Puntaje dario</th>
+    <th>Puntaje total fecha</th>
+    <th>Fecha</th>
+    <th>Jugador</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @estados.each do |estado| %>
+  <tr>
+    <td><%= estado.titular %></td>
+    <td><%= estado.no_suma_puntos %></td>
+    <td><%= estado.capitan %></td>
+    <td><%= estado.goles %></td>
+    <td><%= estado.goles_de_penal %></td>
+    <td><%= estado.figura %></td>
+    <td><%= estado.chenemigo %></td>
+    <td><%= estado.roja %></td>
+    <td><%= estado.valla_invicta %></td>
+    <td><%= estado.penales_errados %></td>
+    <td><%= estado.penales_atajados %></td>
+    <td><%= estado.puntaje_dario %></td>
+    <td><%= estado.puntaje_total_fecha %></td>
+    <td><%= estado.fecha_id %></td>
+    <td><%= estado.jugador_id %></td>
+    <td><%= link_to 'Ver', estado %></td>
+    <td><%= link_to 'Editar', edit_estado_path(estado) %></td>
+    <td><%= link_to 'Eliminar', estado, method: :delete, data: { confirm: 'Está seguro que desea eliminar?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Estado', new_estado_path %>

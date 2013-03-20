@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tactica_id: 1
+  posicion_id: 1
+  fecha_desde: 2013-03-11
+  fecha_hasta: 2013-03-11
+
+two:
+  tactica_id: 1
+  posicion_id: 1
+  fecha_desde: 2013-03-11
+  fecha_hasta: 2013-03-11

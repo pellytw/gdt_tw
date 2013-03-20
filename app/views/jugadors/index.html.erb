@@ -1,0 +1,29 @@
+<h1>Listado de jugadores</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Club</th>
+    <th>Posición</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @jugadors.each do |jugador| %>
+  <tr>
+    <td><%= jugador.nombre %></td>
+    <td><%= jugador.apellido %></td>
+    <td><%= jugador.club %></td>
+    <td><%= jugador.posicion %></td>
+    <td><%= link_to 'Ver', jugador %></td>
+    <td><%= link_to 'Editar', edit_jugador_path(jugador) %></td>
+    <td><%= link_to 'Eliminar', jugador, method: :delete, data: { confirm: 'Está seguro que desea eliminar?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Jugador', new_jugador_path %>

@@ -1,0 +1,23 @@
+<h1>Listado de tácticas</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Nombre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tacticas.each do |tactica| %>
+  <tr>
+    <td><%= tactica.nombre %></td>
+    <td><%= link_to 'Ver', tactica %></td>
+    <td><%= link_to 'Editar', edit_tactica_path(tactica) %></td>
+    <td><%= link_to 'Eliminar', tactica, method: :delete, data: { confirm: 'Está seguro que desea eliminar?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva táctica', new_tactica_path %>

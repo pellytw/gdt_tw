@@ -1,0 +1,13 @@
+<h1>Listado de roles</h1>
+
+<%= link_to 'Nuevo Role', new_role_path %>
+<br />
+<ul>
+  <li class="listNoDecorate">
+    <span class="roleDescription">Role Name</span>
+    <span class="roleCommands">[Commands]</span>
+  </li>
+
+  <%=  build_role_list('indexrow') %>
+</ul>
+
