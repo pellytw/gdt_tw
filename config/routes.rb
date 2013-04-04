@@ -4,6 +4,12 @@ Mysecurity::Application.routes.draw do
   match 'equipos/cargar_equipo/:id_equipo' => 'equipos#cargar_equipo'
   match 'equipos/agregar_jugadores' => 'equipos#agregar_jugadores'
   match 'equipos/agregar_jugadores/:id_equipo' => 'equipos#agregar_jugadores'
+  match 'equipos/eliminar_jugadores' => 'equipos#eliminar_jugadores'
+  match 'equipos/eliminar_jugadores/:id_equipo/:id_jugador' => 'equipos#eliminar_jugadores'
+
+  match 'equipos/mi_equipo' => 'equipos#mi_equipo'
+  match 'equipos/mi_equipo/:id_equipo' => 'equipos#mi_equipo'
+
 
   #match '/equipos/agregar_equipo', :controller => 'equipos', :action => 'agregar_equipo'
   #match 'equipos/agregar_equipo' => 'equipos#agregar_equipo'

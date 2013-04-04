@@ -105,5 +105,22 @@ class EquiposController < ApplicationController
     redirect_to :controller => 'equipos', :action => 'show', :id => @idEquipo
   end
 
+  def eliminar_jugadores
+
+    @idEquipo = params[:id_equipo]
+    @idJugador = params[:id_jugador]
+
+    @je = JugadorEquipo.where(:equipo_id => @idEquipo, :jugador_id => @idJugador)
+    
+    @j = Jugador.find(@idJugador)
+    @j.disponible = true
+    @j.save
+    
+    JugadorEquipo.destroy(@je)
+
+    redirect_to :back
+
+  end
+
 
 end

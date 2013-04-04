@@ -21,6 +21,75 @@
   </div>
   <div>
 
+    <a href="<%=url_for equipos_cargar_equipo_path%>/<%= @equipo.id%>" class="btn btn-small btn-success"><i class="icon-plus"></i>  Cargar Jugadores</a></br></br></br>
+
+<div class="alert alert-info"><strong>ARQUEROS</strong></div>
+<ul>
+<% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
+  
+    <% if (j.jugador.posicion_id == Posicion.where(:nombre => "ARQUERO").first.id) then%>
+      <h4><li><%= j.jugador %>&nbsp;&nbsp;&nbsp;<a href="<%=url_for equipos_eliminar_jugadores_path%>/<%=j.equipo.id%>/<%=j.jugador.id%>" class="btn btn-mini btn-danger" >Eliminar</a><br></li></h4>
+    <% end %>
+  
+<% end %>
+</ul>
+
+<div class="alert alert-info"><strong>DEFENSORES CENTRALES</strong></div>
+<ul>
+<% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
+  
+    <% if (j.jugador.posicion_id == Posicion.where(:nombre => "DEFENSOR CENTRAL").first.id) then%>
+      <h4><li><%= j.jugador %>&nbsp;&nbsp;&nbsp;<a href="<%=url_for equipos_eliminar_jugadores_path%>/<%=j.equipo.id%>/<%=j.jugador.id%>" class="btn btn-mini btn-danger" >Eliminar</a><br></li></h4>
+    <% end %>
+  
+<% end %>
+</ul>
+
+<div class="alert alert-info"><strong>DEFENSORES LATERALES</strong></div>
+<ul>
+<% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
+  
+    <% if (j.jugador.posicion_id == Posicion.where(:nombre => "DEFENSOR LATERAL").first.id) then%>
+      <h4><li><%= j.jugador %>&nbsp;&nbsp;&nbsp;<a href="<%=url_for equipos_eliminar_jugadores_path%>/<%=j.equipo.id%>/<%=j.jugador.id%>" class="btn btn-mini btn-danger" >Eliminar</a><br></li></h4>
+    <% end %>
+  
+<% end %>
+</ul>
+
+<div class="alert alert-info"><strong>VOLANTES CENTRALES</strong></div>
+<ul>
+<% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
+  
+    <% if (j.jugador.posicion_id == Posicion.where(:nombre => "VOLANTE CENTRAL").first.id) then%>
+      <h4><li><%= j.jugador %>&nbsp;&nbsp;&nbsp;<a href="<%=url_for equipos_eliminar_jugadores_path%>/<%=j.equipo.id%>/<%=j.jugador.id%>" class="btn btn-mini btn-danger" >Eliminar</a><br></li></h4>
+    <% end %>
+ 
+<% end %>
+</ul>
+
+<div class="alert alert-info"><strong>VOLANTES LATERALES</strong></div>
+<ul>
+<% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
+  
+    <% if (j.jugador.posicion_id == Posicion.where(:nombre => "VOLANTE LATERAL").first.id) then%>
+      <h4><li><%= j.jugador %>&nbsp;&nbsp;&nbsp;<a href="<%=url_for equipos_eliminar_jugadores_path%>/<%=j.equipo.id%>/<%=j.jugador.id%>" class="btn btn-mini btn-danger" >Eliminar</a><br></li></h4>
+    <% end %>
+  
+<% end %>
+</ul>
+
+<div class="alert alert-info"><strong>DELANTEROS</strong></div>
+<ul>
+<% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
+  
+    <% if (j.jugador.posicion_id == Posicion.where(:nombre => "DELANTERO").first.id) then%>
+      <h4><li><%= j.jugador %>&nbsp;&nbsp;&nbsp;<a href="<%=url_for equipos_eliminar_jugadores_path%>/<%=j.equipo.id%>/<%=j.jugador.id%>" class="btn btn-mini btn-danger" >Eliminar</a><br></li></h4>
+    <% end %>
+  
+<% end %>
+</ul>
+
+
   </div>
   <div class="actions">
     <%= f.submit %>
