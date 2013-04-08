@@ -1,81 +1,94 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Nombre:</b>
-  <%= @equipo.nombre %>
-</p>
-
-<p>
-  <b>Participante:</b>
-  <%= @equipo.participante %>
-</p>
 
 
-<div class="alert alert-info"><strong>ARQUEROS</strong></div>
-<ul>
-<% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
+<h2><div class="alert alert-info" align="center"><strong><p><%= @equipo.nombre %></p></strong></div></h2>
   
-  	<% if (j.jugador.posicion_id == Posicion.where(:nombre => "ARQUERO").first.id) then%>
-   		<h5><li><%= j.jugador %><br></li></h5>
-   	<% end %>
-  
-<% end %>
-</ul>
+<div class="row-fluid">
+  <div class="span3 offset4">    
+    <div class="alert alert-success"><strong><p><b></b><%= @equipo.participante %></p></strong></div>
+  </div>
+</div>
 
-<div class="alert alert-info"><strong>DEFENSORES CENTRALES</strong></div>
-<ul>
-<% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
-  
-  	<% if (j.jugador.posicion_id == Posicion.where(:nombre => "DEFENSOR CENTRAL").first.id) then%>
-   		<h5><li><%= j.jugador %>  <br></li></h5>
-   	<% end %>
-  
-<% end %>
-</ul>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span4">
+      <!--Sidebar content-->
+      <div class="alert alert-success"><strong>PLANTEL</strong></div>
+      <div class="alert alert-info"><strong>ARQUEROS</strong></div>
+      <ul>
+      <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
+        
+          <% if (j.jugador.posicion_id == Posicion.where(:nombre => "ARQUERO").first.id) then%>
+            <h5><li><%= j.jugador %><br></li></h5>
+          <% end %>
+        
+      <% end %>
+      </ul>
 
-<div class="alert alert-info"><strong>DEFENSORES LATERALES</strong></div>
-<ul>
-<% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
-  
-  	<% if (j.jugador.posicion_id == Posicion.where(:nombre => "DEFENSOR LATERAL").first.id) then%>
-   		<h5><li><%= j.jugador %><br></li></h5>
-   	<% end %>
-  
-<% end %>
-</ul>
+      <div class="alert alert-info"><strong>DEFENSORES CENTRALES</strong></div>
+      <ul>
+      <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
+        
+          <% if (j.jugador.posicion_id == Posicion.where(:nombre => "DEFENSOR CENTRAL").first.id) then%>
+            <h5><li><%= j.jugador %>  <br></li></h5>
+          <% end %>
+        
+      <% end %>
+      </ul>
 
-<div class="alert alert-info"><strong>VOLANTES CENTRALES</strong></div>
-<ul>
-<% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
-  
-  	<% if (j.jugador.posicion_id == Posicion.where(:nombre => "VOLANTE CENTRAL").first.id) then%>
-   		<h5><li><%= j.jugador %><br></li></h5>
-   	<% end %>
- 
-<% end %>
-</ul>
+      <div class="alert alert-info"><strong>DEFENSORES LATERALES</strong></div>
+      <ul>
+      <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
+        
+          <% if (j.jugador.posicion_id == Posicion.where(:nombre => "DEFENSOR LATERAL").first.id) then%>
+            <h5><li><%= j.jugador %><br></li></h5>
+          <% end %>
+        
+      <% end %>
+      </ul>
 
-<div class="alert alert-info"><strong>VOLANTES LATERALES</strong></div>
-<ul>
-<% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
-  
-  	<% if (j.jugador.posicion_id == Posicion.where(:nombre => "VOLANTE LATERAL").first.id) then%>
-   		<h5><li><%= j.jugador %><br></li></h5>
-   	<% end %>
-  
-<% end %>
-</ul>
+      <div class="alert alert-info"><strong>VOLANTES CENTRALES</strong></div>
+      <ul>
+      <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
+        
+          <% if (j.jugador.posicion_id == Posicion.where(:nombre => "VOLANTE CENTRAL").first.id) then%>
+            <h5><li><%= j.jugador %><br></li></h5>
+          <% end %>
+       
+      <% end %>
+      </ul>
 
-<div class="alert alert-info"><strong>DELANTEROS</strong></div>
-<ul>
-<% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
-  
-  	<% if (j.jugador.posicion_id == Posicion.where(:nombre => "DELANTERO").first.id) then%>
-   		<h5><li><%= j.jugador %><br></li></h5>
-   	<% end %>
-  
-<% end %>
-</ul>
+      <div class="alert alert-info"><strong>VOLANTES LATERALES</strong></div>
+      <ul>
+      <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
+        
+          <% if (j.jugador.posicion_id == Posicion.where(:nombre => "VOLANTE LATERAL").first.id) then%>
+            <h5><li><%= j.jugador %><br></li></h5>
+          <% end %>
+        
+      <% end %>
+      </ul>
+
+      <div class="alert alert-info"><strong>DELANTEROS</strong></div>
+      <ul>
+      <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>
+        
+          <% if (j.jugador.posicion_id == Posicion.where(:nombre => "DELANTERO").first.id) then%>
+            <h5><li><%= j.jugador %><br></li></h5>
+          <% end %>
+        
+      <% end %>
+      </ul>
+    </div>
+    <div class="span5 offset2">
+      <!--Body content-->
+      <div class="alert alert-success"><strong>ESTADÍSTICAS</strong></div>
+    </div>
+  </div>
+</div>
+
+
 
 
 <%= link_to 'Editar', edit_equipo_path(@equipo) %> |
