@@ -2,49 +2,62 @@
 
     <p class="lead">ARQUEROS</p>
     <ul>
-    <% Jugador.where("posicion_id=? and disponible=?",  Posicion.where(:nombre => "ARQUERO").first.id, true).each do |j|%>
+    <% @arqueros = Jugador.where("posicion_id=? and disponible=?",  Posicion.where(:nombre => "ARQUERO").first.id, true) %>
+    <% @arqueros.sort { |a,b| a[:club] <=> b[:club] } %>
+    <% @arqueros.each do |j| %>
       <li>
-        <input type="checkbox" name="<%= j.id %>"> <%= j %></input><br>
+        <input type="checkbox" name="<%= j.id %>"> (<%= j.club %>) - <%= j %><br>
       </li>
-    <% end %>
+    <%end%>
+    
     </ul>
     <p class="lead">DEFENSORES CENTRALES</p>
     <ul>
-    <% Jugador.where("posicion_id=? and disponible=?", Posicion.where(:nombre => "DEFENSOR CENTRAL").first.id, true).each do |j|%>
+    <% @defensores_centrales = Jugador.where("posicion_id=? and disponible=?", Posicion.where(:nombre => "DEFENSOR CENTRAL").first.id, true) %>
+    <% @defensores_centrales.sort { |a,b| a[:club] <=> b[:club] } %>
+    <% @defensores_centrales.each do |j| %>
       <li>
-        <input type="checkbox" name="<%= j.id %>"> <%= j %><br>
+        <input type="checkbox" name="<%= j.id %>"> (<%= j.club %>) - <%= j %><br>
       </li>
     <% end %>
     </ul>
       <p class="lead">DEFENSORES LATERALES</p>
     <ul>
-    <% Jugador.where("posicion_id=? and disponible=?", Posicion.where(:nombre => "DEFENSOR LATERAL").first.id, true).each do |j|%>
+    <% @defensores_laterales = Jugador.where("posicion_id=? and disponible=?", Posicion.where(:nombre => "DEFENSOR LATERAL").first.id, true)%>
+    <% @defensores_laterales.sort { |a,b| a[:club] <=> b[:club] } %>
+    <% @defensores_laterales.each do |j| %>
       <li>
-        <input type="checkbox" name="<%= j.id %>"> <%= j %><br>
+        <input type="checkbox" name="<%= j.id %>"> (<%= j.club %>) - <%= j %><br>
       </li>
     <% end %>
     </ul>
     <p class="lead">VOLANTES CENTRALES</p>
     <ul>
-    <% Jugador.where("posicion_id=? and disponible=?",  Posicion.where(:nombre => "VOLANTE CENTRAL").first.id, true).each do |j|%>
+    <% @volantes_centrales = Jugador.where("posicion_id=? and disponible=?",  Posicion.where(:nombre => "VOLANTE CENTRAL").first.id, true) %>
+    <% @volantes_centrales.sort { |a,b| a[:club] <=> b[:club] } %>
+    <% @volantes_centrales.each do |j| %>
       <li>
-        <input type="checkbox" name="<%= j.id %>"> <%= j %><br>
+        <input type="checkbox" name="<%= j.id %>"> (<%= j.club %>) - <%= j %><br>
       </li>
     <% end %>
     </ul>
     <p class="lead">VOLANTES LATERALES</p>
     <ul>
-    <% Jugador.where("posicion_id=? and disponible=?",  Posicion.where(:nombre => "VOLANTE LATERAL").first.id, true).each do |j|%>
+    <% @volantes_laterales = Jugador.where("posicion_id=? and disponible=?",  Posicion.where(:nombre => "VOLANTE LATERAL").first.id, true) %>
+    <% @volantes_laterales.sort { |a,b| a[:club] <=> b[:club] } %>
+    <% @volantes_laterales.each do |j| %>
       <li>
-        <input type="checkbox" name="<%= j.id %>"> <%= j %><br>
+        <input type="checkbox" name="<%= j.id %>"> (<%= j.club %>) - <%= j %><br>
       </li>
     <% end %>
     </ul>
     <p class="lead">DELANTEROS</p>
     <ul>
-    <% Jugador.where("posicion_id=? and disponible=?", Posicion.where(:nombre => "DELANTERO").first.id, true).each do |j|%>
+    <% @delanteros = Jugador.where("posicion_id=? and disponible=?", Posicion.where(:nombre => "DELANTERO").first.id, true) %>
+    <% @delanteros.sort { |a,b| a[:club] <=> b[:club] } %>
+    <% @delanteros.each do |j| %>
       <li>
-        <input type="checkbox" name="<%= j.id %>"> <%= j %><br>
+        <input type="checkbox" name="<%= j.id %>"> (<%= j.club %>) - <%= j %><br>
       </li>
     <% end %>
     </ul>

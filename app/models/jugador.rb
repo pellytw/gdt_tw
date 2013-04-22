@@ -1,5 +1,5 @@
 class Jugador < ActiveRecord::Base
-  attr_accessible :apellido, :club_id, :nombre, :posicion_id, :disponible
+  attr_accessible :club_id, :nombres, :posicion_id, :disponible
   belongs_to :club
   belongs_to :posicion
 
@@ -7,7 +7,7 @@ class Jugador < ActiveRecord::Base
   has_many :jugador_equipo, :dependent => :destroy 
 
   def to_s
-  	self.nombre + " " + self.apellido
+  	self.nombres
   end
 
 end

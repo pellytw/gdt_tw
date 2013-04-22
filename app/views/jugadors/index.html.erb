@@ -3,7 +3,6 @@
 <table class="table table-striped">
   <tr>
     <th>Nombre</th>
-    <th>Apellido</th>
     <th>Club</th>
     <th>Posición</th>
     <th></th>
@@ -13,8 +12,7 @@
 
 <% @jugadors.each do |jugador| %>
   <tr>
-    <td><%= jugador.nombre %></td>
-    <td><%= jugador.apellido %></td>
+    <td><%= jugador.nombres %></td>
     <td><%= jugador.club %></td>
     <td><%= jugador.posicion %></td>
     <td><%= link_to 'Ver', jugador %></td>
