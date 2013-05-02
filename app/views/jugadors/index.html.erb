@@ -1,5 +1,19 @@
 <h1>Listado de jugadores</h1>
 
+<form class="form-search" action="<%= url_for :controller => "jugadors", :action => "index"%>">
+  <div class="input-prepend">
+    <button type="submit" class="btn" >Buscar</button>
+    <input type="text" class="span2 search-query" name="q" placeholder="nombre del jugador">
+  </div>
+</form>
+
+<div align="right"><%= link_to 'Nuevo Jugador', new_jugador_path, :class => "btn btn-success" %></div>
+
+<div class="pager pagination-centered">
+<%= will_paginate @jugadors %> 
+</div>
+
+
 <table class="table table-striped">
   <tr>
     <th>Nombre</th>
@@ -15,13 +29,13 @@
     <td><%= jugador.nombres %></td>
     <td><%= jugador.club %></td>
     <td><%= jugador.posicion %></td>
-    <td><%= link_to 'Ver', jugador %></td>
-    <td><%= link_to 'Editar', edit_jugador_path(jugador) %></td>
-    <td><%= link_to 'Eliminar', jugador, method: :delete, data: { confirm: 'Está seguro que desea eliminar?' } %></td>
+    <td><%= link_to 'Ver', jugador, :class => "btn btn-success" %></td>
+    <td><%= link_to 'Editar', edit_jugador_path(jugador), :class => "btn btn-primary" %></td>
+    <td><%= link_to 'Eliminar', jugador, method: :delete, data: { confirm: 'Está seguro que desea eliminar?' }, :class => "btn btn-danger" %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'Nuevo Jugador', new_jugador_path %>
+<%= link_to 'Nuevo Jugador', new_jugador_path, :class => "btn btn-success" %>

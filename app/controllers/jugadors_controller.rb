@@ -2,11 +2,14 @@ class JugadorsController < ApplicationController
   # GET /jugadors
   # GET /jugadors.json
   def index
-    @jugadors = Jugador.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @jugadors }
+    if params["q"] then
+      if params["q"] == "" then
+        @jugadors = Jugador.paginate(:page => params[:page], :per_page => 30)
+      else
+        @jugadors = Jugador.where(['nombres LIKE ?', "%"+params["q"]+"%"]).paginate(:page => params[:page], :per_page => 30)
+      end
+    else      
+      @jugadors = Jugador.paginate(:page => params[:page], :per_page => 30)
     end
   end
 
@@ -80,4 +83,19 @@ class JugadorsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def buscar_jugador
+debugger
+    if params["q"] then
+      if params["q"] == "" then
+        @jugadors = Jugador.paginate(:page => params[:page], :per_page => 5)
+      else
+        @jugadors = Jugador.where(['nombres LIKE ?', "%"+params["q"]+"%"]).paginate(:page => params[:page], :per_page => 5)
+      end
+    else      
+      @jugadors = Jugador.paginate(:page => params[:page], :per_page => 5)
+    end
+
+  end
+
 end

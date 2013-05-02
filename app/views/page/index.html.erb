@@ -2,7 +2,9 @@
   <h1>Bienvenido</h1>
   <p>Gran DT Trelew</p>
   <p>
-    <a class="btn btn-primary btn-large">
+  	<% @participante = Participante.find(current_user.id) %>
+    <% @equipo = Equipo.where(:participante_id => @participante.id).first %>
+    <a class="btn btn-primary btn-large" href="<%=url_for "equipos"%>/<%=@equipo.id%>">
       ir a mi equipo
     </a>
   </p>

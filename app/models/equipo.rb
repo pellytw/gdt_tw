@@ -10,5 +10,15 @@ class Equipo < ActiveRecord::Base
   def to_s
   	self.nombre
   end
+  
+  def jugador_nombres
+    jugador.try(:nombres)
+  end
+  
+  def jugador_nombres=(nombres)
+    self.jugador = Jugador.find_by_nombres(nombres) if nombres.present?
+  end
+
+
 
 end

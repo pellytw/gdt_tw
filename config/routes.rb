@@ -10,6 +10,8 @@ Mysecurity::Application.routes.draw do
   match 'equipos/mi_equipo' => 'equipos#mi_equipo'
   match 'equipos/mi_equipo/:id_equipo' => 'equipos#mi_equipo'
 
+  get "autocomplete_jugador/index"
+
 
   #match '/equipos/agregar_equipo', :controller => 'equipos', :action => 'agregar_equipo'
   #match 'equipos/agregar_equipo' => 'equipos#agregar_equipo'

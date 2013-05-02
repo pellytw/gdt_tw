@@ -11,126 +11,131 @@
     </div>
   <% end %>
 
+
   <div class="field">
-    <%= f.label :nombre %><br />
+    <%= f.label :nombre %>
     <%= f.text_field :nombre %>
   </div>
+ <!--  <div class="row">
+    JUGADOR: <%= f.text_field :nombre, data: {autocomplete_source: autocomplete_jugador_index_path}, :class => "input-xxlarge" %>
+  </div> -->
   <div class="field">
-    <%= f.label :participante_id %><br />
+    <%= f.label :participante_id %>
     <%= f.collection_select(:participante_id, Participante.all, :id, :apodo) %>
   </div>
   <div>
 
     <a href="<%=url_for equipos_cargar_equipo_path%>/<%= @equipo.id%>" class="btn btn-small btn-success"><i class="icon-plus"></i>  Cargar Jugadores</a></br></br></br>
 
-<table class="table">
-<tr class="success"><td colspan="3"> <h5>ARQUEROS</h5></td></tr>
-<ul>
-  <tr>
-  </tr>
-    <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>  
-      <% if (j.jugador.posicion_id == Posicion.where(:nombre => "ARQUERO").first.id) then%>
-        <tr>
-          <td><h5><li><%= j.jugador %><br></li></h5></td>
-          <td><a href="#modalReemplazar" role="button" class="btn btn-mini btn-primary" data-toggle="modal">Reemplazar</a></td>
-          <td><a href="<%=url_for equipos_eliminar_jugadores_path%>/<%=j.equipo.id%>/<%=j.jugador.id%>" class="btn btn-mini btn-danger" >Eliminar</a></td>
-        </tr>
-      <% end %>  
-    <% end %>
-</ul>
+    <table class="table">
+    <tr class="success"><td colspan="3"> <h5>ARQUEROS</h5></td></tr>
+    <ul>
+      <tr>
+      </tr>
+        <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>  
+          <% if (j.jugador.posicion_id == Posicion.where(:nombre => "ARQUERO").first.id) then%>
+            <tr>
+              <td><h5><li><%= j.jugador %><br></li></h5></td>
+              <td><a href="#modalReemplazar" role="button" class="btn btn-mini btn-primary" data-toggle="modal">Reemplazar</a></td>
+              <td><a href="<%=url_for equipos_eliminar_jugadores_path%>/<%=j.equipo.id%>/<%=j.jugador.id%>" class="btn btn-mini btn-danger" >Eliminar</a></td>
+            </tr>
+          <% end %>  
+        <% end %>
+    </ul>
 
-<tr class="success"><td colspan="3"> <h5>DEFENSORES CENTRALES</h5></td></tr>
-<ul>
-  <tr>
-  </tr>
-    <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>  
-      <% if (j.jugador.posicion_id == Posicion.where(:nombre => "DEFENSOR CENTRAL").first.id) then%>
-        <tr>
-          <td><h5><li><%= j.jugador %><br></li></h5></td>
-          <td><a href="" class="btn btn-mini btn-primary" >Reemplazar</a></td>
-          <td><a href="<%=url_for equipos_eliminar_jugadores_path%>/<%=j.equipo.id%>/<%=j.jugador.id%>" class="btn btn-mini btn-danger" >Eliminar</a></td>
-        </tr>
-      <% end %>  
-    <% end %>
-</ul>
+    <tr class="success"><td colspan="3"> <h5>DEFENSORES CENTRALES</h5></td></tr>
+    <ul>
+      <tr>
+      </tr>
+        <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>  
+          <% if (j.jugador.posicion_id == Posicion.where(:nombre => "DEFENSOR CENTRAL").first.id) then%>
+            <tr>
+              <td><h5><li><%= j.jugador %><br></li></h5></td>
+              <td><a href="" class="btn btn-mini btn-primary" >Reemplazar</a></td>
+              <td><a href="<%=url_for equipos_eliminar_jugadores_path%>/<%=j.equipo.id%>/<%=j.jugador.id%>" class="btn btn-mini btn-danger" >Eliminar</a></td>
+            </tr>
+          <% end %>  
+        <% end %>
+    </ul>
 
-<tr class="success"><td colspan="3"> <h5>DEFENSORES LATERALES</h5></td></tr>
-<ul>
-  <tr>
-  </tr>
-    <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>  
-      <% if (j.jugador.posicion_id == Posicion.where(:nombre => "DEFENSOR LATERAL").first.id) then%>
-        <tr>
-          <td><h5><li><%= j.jugador %><br></li></h5></td>
-          <td><a href="" class="btn btn-mini btn-primary" >Reemplazar</a></td>
-          <td><a href="<%=url_for equipos_eliminar_jugadores_path%>/<%=j.equipo.id%>/<%=j.jugador.id%>" class="btn btn-mini btn-danger" >Eliminar</a></td>
-        </tr>
-      <% end %>  
-    <% end %>
-</ul>
+    <tr class="success"><td colspan="3"> <h5>DEFENSORES LATERALES</h5></td></tr>
+    <ul>
+      <tr>
+      </tr>
+        <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>  
+          <% if (j.jugador.posicion_id == Posicion.where(:nombre => "DEFENSOR LATERAL").first.id) then%>
+            <tr>
+              <td><h5><li><%= j.jugador %><br></li></h5></td>
+              <td><a href="" class="btn btn-mini btn-primary" >Reemplazar</a></td>
+              <td><a href="<%=url_for equipos_eliminar_jugadores_path%>/<%=j.equipo.id%>/<%=j.jugador.id%>" class="btn btn-mini btn-danger" >Eliminar</a></td>
+            </tr>
+          <% end %>  
+        <% end %>
+    </ul>
 
-<tr class="success"><td colspan="3"> <h5>VOLANTES CENTRALES</h5></td></tr>
-<ul>
-  <tr>
-  </tr>
-    <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>  
-      <% if (j.jugador.posicion_id == Posicion.where(:nombre => "VOLANTE CENTRAL").first.id) then%>
-        <tr>
-          <td><h5><li><%= j.jugador %><br></li></h5></td>
-          <td><a href="" class="btn btn-mini btn-primary" >Reemplazar</a></td>
-          <td><a href="<%=url_for equipos_eliminar_jugadores_path%>/<%=j.equipo.id%>/<%=j.jugador.id%>" class="btn btn-mini btn-danger" >Eliminar</a></td>
-        </tr>
-      <% end %>  
-    <% end %>
-</ul>
+    <tr class="success"><td colspan="3"> <h5>VOLANTES CENTRALES</h5></td></tr>
+    <ul>
+      <tr>
+      </tr>
+        <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>  
+          <% if (j.jugador.posicion_id == Posicion.where(:nombre => "VOLANTE CENTRAL").first.id) then%>
+            <tr>
+              <td><h5><li><%= j.jugador %><br></li></h5></td>
+              <td><a href="" class="btn btn-mini btn-primary" >Reemplazar</a></td>
+              <td><a href="<%=url_for equipos_eliminar_jugadores_path%>/<%=j.equipo.id%>/<%=j.jugador.id%>" class="btn btn-mini btn-danger" >Eliminar</a></td>
+            </tr>
+          <% end %>  
+        <% end %>
+    </ul>
 
-<tr class="success"><td colspan="3"> <h5>VOLANTES LATERALES</h5></td></tr>
-<ul>
-  <tr>
-  </tr>
-    <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>  
-      <% if (j.jugador.posicion_id == Posicion.where(:nombre => "VOLANTE LATERAL").first.id) then%>
-        <tr>
-          <td><h5><li><%= j.jugador %><br></li></h5></td>
-          <td><a href="" class="btn btn-mini btn-primary" >Reemplazar</a></td>
-          <td><a href="<%=url_for equipos_eliminar_jugadores_path%>/<%=j.equipo.id%>/<%=j.jugador.id%>" class="btn btn-mini btn-danger" >Eliminar</a></td>
-        </tr>
-      <% end %>  
-    <% end %>
-</ul>
+    <tr class="success"><td colspan="3"> <h5>VOLANTES LATERALES</h5></td></tr>
+    <ul>
+      <tr>
+      </tr>
+        <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>  
+          <% if (j.jugador.posicion_id == Posicion.where(:nombre => "VOLANTE LATERAL").first.id) then%>
+            <tr>
+              <td><h5><li><%= j.jugador %><br></li></h5></td>
+              <td><a href="" class="btn btn-mini btn-primary" >Reemplazar</a></td>
+              <td><a href="<%=url_for equipos_eliminar_jugadores_path%>/<%=j.equipo.id%>/<%=j.jugador.id%>" class="btn btn-mini btn-danger" >Eliminar</a></td>
+            </tr>
+          <% end %>  
+        <% end %>
+    </ul>
 
-<tr class="success"><td colspan="3"> <h5>DELANTEROS</h5></td></tr>
-<ul>
-  <tr>
-  </tr>
-    <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>  
-      <% if (j.jugador.posicion_id == Posicion.where(:nombre => "DELANTERO").first.id) then%>
-        <tr>
-          <td><h5><li><%= j.jugador %><br></li></h5></td>
-          <td><a href="" class="btn btn-mini btn-primary" >Reemplazar</a></td>
-          <td><a href="<%=url_for equipos_eliminar_jugadores_path%>/<%=j.equipo.id%>/<%=j.jugador.id%>" class="btn btn-mini btn-danger" >Eliminar</a></td>
-        </tr>
-      <% end %>  
-    <% end %>
-</ul>
-</table>
+    <tr class="success"><td colspan="3"> <h5>DELANTEROS</h5></td></tr>
+    <ul>
+      <tr>
+      </tr>
+        <% JugadorEquipo.where("equipo_id=?",  @equipo.id).each do |j|%>  
+          <% if (j.jugador.posicion_id == Posicion.where(:nombre => "DELANTERO").first.id) then%>
+            <tr>
+              <td><h5><li><%= j.jugador %><br></li></h5></td>
+              <td><a href="" class="btn btn-mini btn-primary" >Reemplazar</a></td>
+              <td><a href="<%=url_for equipos_eliminar_jugadores_path%>/<%=j.equipo.id%>/<%=j.jugador.id%>" class="btn btn-mini btn-danger" >Eliminar</a></td>
+            </tr>
+          <% end %>  
+        <% end %>
+    </ul>
+    </table>
 
-<!-- Modal -->
-<div id="modalReemplazar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Reemplazar Jugador</h3>
+    <!-- Modal -->
+    <div id="modalReemplazar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Reemplazar Jugador</h3>
+      </div>
+      <div class="modal-body">NO IMPLEMENTADO
+        
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+
   </div>
-  <div class="modal-body">
-    <p></p>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary">Save changes</button>
-  </div>
-</div>
-
-  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
