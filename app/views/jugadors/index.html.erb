@@ -19,6 +19,7 @@
     <th>Nombre</th>
     <th>Club</th>
     <th>Posición</th>
+    <th>Situaci&oacute;n</th>
     <th></th>
     <th></th>
     <th></th>
@@ -29,6 +30,11 @@
     <td><%= jugador.nombres %></td>
     <td><%= jugador.club %></td>
     <td><%= jugador.posicion %></td>
+    <td>
+      <% if jugador.disponible then %> Disponible 
+      <% else %> Elegido
+      <% end %>
+    </td>
     <td><%= link_to 'Ver', jugador, :class => "btn btn-success" %></td>
     <td><%= link_to 'Editar', edit_jugador_path(jugador), :class => "btn btn-primary" %></td>
     <td><%= link_to 'Eliminar', jugador, method: :delete, data: { confirm: 'Está seguro que desea eliminar?' }, :class => "btn btn-danger" %></td>
