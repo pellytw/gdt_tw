@@ -21,7 +21,7 @@ $(function() {
             
             var algo = ui.draggable.find("a").attr("id")
             ui.draggable.remove()
-            $(this).append("<input type='hidden' value="+ ui.draggable.attr("id") +"><li>" + draggable.text() + "</li>");
+            $(this).append("<input type='hidden' value="+ ui.draggable.attr("id") +"><span class='label label-info'>" + draggable.text() + "</span>");
         }
     });
 })

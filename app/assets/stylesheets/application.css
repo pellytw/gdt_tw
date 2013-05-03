@@ -9,8 +9,8 @@
 
 
 div.droppable{
-	height: 500px;
-    width: 500px;
-    background-color: #aabb00;
+	height: 60px;
+    width: 400px;
+    background-color: #66b3ff;
     margin-top: 20px;
 }

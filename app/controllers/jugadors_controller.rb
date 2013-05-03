@@ -85,7 +85,6 @@ class JugadorsController < ApplicationController
   end
 
   def buscar_jugador
-debugger
     if params["q"] then
       if params["q"] == "" then
         @jugadors = Jugador.paginate(:page => params[:page], :per_page => 5)

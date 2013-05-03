@@ -6,23 +6,73 @@
       <div class="span6">
       	<span class="label label-info"> DISPONIBLES </span></br></br>
       	<ul>
-      	<% @je.all.each do |j| %>
-
-      		<li class="draggable">
-      			<span class="label label-success"> <%=j.posicion %> - <%= j %> </span>
-      		</li>
-
+      	<span class="label label-inverse">Arqueros</span>
+      	<% @je_arqueros.each do |ja| %>
+      		<label id="draggable_arqueros" class="draggable">
+      			<span class="label label-success"> <%=ja.club %> - <%= ja %> </span>
+      		</label>
       	<% end %> 
+      	<span class="label label-inverse">Defensores centrales</span>
+      	<% @je_defensores_centrales.each do |jdc| %>
+      		<label id="draggable_defensores_centrales" class="draggable">
+      			<span class="label label-success"> <%=jdc.club %> - <%= jdc %> </span>
+      		</label>
+      	<% end %> 
+      	<span class="label label-inverse">Defensores laterales</span>
+      	<% @je_defensores_laterales.each do |jdl| %>
+      		<label id="draggable_defensores_laterales" class="draggable">
+      			<span class="label label-success"> <%=jdl.club %> - <%= jdl %> </span>
+      		</label>
+      	<% end %>
+      	<span class="label label-inverse">Volantes centrales</span>
+      	<% @je_volantes_centrales.each do |jvc| %>
+      		<label id="draggable_volantes_centrales" class="draggable">
+      			<span class="label label-success"> <%=jvc.club %> - <%= jvc %> </span>
+      		</label>
+      	<% end %> 
+      	<span class="label label-inverse">Volantes laterales</span>
+      	<% @je_volantes_laterales.each do |jvl| %>
+      		<label id="draggable_volantes_laterales" class="draggable">
+      			<span class="label label-success"> <%=jvl.club %> - <%= jvl %> </span>
+      		</label>
+      	<% end %>
+      	<span class="label label-inverse">Delanteros</span>
+      	<% @je_delanteros.each do |jd| %>
+      		<label id="draggable_delanteros" class="draggable">
+      			<span class="label label-success"> <%=jd.club %> - <%= jd %> </span>
+      		</label>
+      	<% end %>
         </ul>
 
       </div>
       <div class="span6">
-      	<span class="label label-info"> TITULARES </span>
+      	<span class="label label-info"> TITULARES </span></br></br>
       	
       	<form>
-      		<div class="droppable">
+      		<label> Arquero:  </label>
+      		<div class="droppable" id="resizable" name="arquero" >
 
-      		</div></br>	
+      		</div>	      		
+      		<label> Defensores centrales:  </label>
+      		<div class="droppable" id="resizable" name="defensores_centrales">
+
+      		</div>
+      		<label> Defensores laterales:  </label>
+      		<div class="droppable" id="resizable" name="defensores_laterales">
+
+      		</div>
+      		<label> Volantes centrales:  </label>
+      		<div class="droppable" id="resizable" name="volantes_centrales">
+
+      		</div>
+      		<label> Volantes laterales:  </label>
+      		<div class="droppable" id="resizable" name="volantes_laterales">
+
+      		</div>
+      		<label> Delanteros:  </label>
+      		<div class="droppable" id="resizable" name="delanteros">
+
+      		</div></br>
 
       		<input type="submit" name="confirmar" value="confirmar equipo">
       	</form>

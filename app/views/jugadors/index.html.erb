@@ -31,8 +31,10 @@
     <td><%= jugador.club %></td>
     <td><%= jugador.posicion %></td>
     <td>
-      <% if jugador.disponible then %> Disponible 
-      <% else %> Elegido
+      <% if jugador.disponible then %> 
+        Disponible 
+      <% else %>
+        Elegido
       <% end %>
     </td>
     <td><%= link_to 'Ver', jugador, :class => "btn btn-success" %></td>

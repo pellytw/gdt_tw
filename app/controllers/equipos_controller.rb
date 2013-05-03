@@ -124,7 +124,13 @@ class EquiposController < ApplicationController
 
   def equipo_fecha
 
-    @je = current_user.jugador
+    # @je = current_user.jugador.order("posicion_id, nombres ASC")
+    @je_arqueros = current_user.jugador.where(:posicion_id => 1).order("nombres ASC")
+    @je_defensores_centrales = current_user.jugador.where(:posicion_id => 2).order("nombres ASC")
+    @je_defensores_laterales = current_user.jugador.where(:posicion_id => 3).order("nombres ASC")
+    @je_volantes_centrales = current_user.jugador.where(:posicion_id => 4).order("nombres ASC")
+    @je_volantes_laterales = current_user.jugador.where(:posicion_id => 5).order("nombres ASC")
+    @je_delanteros = current_user.jugador.where(:posicion_id => 6).order("nombres ASC")
 
   end
 
