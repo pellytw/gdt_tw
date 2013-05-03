@@ -23,38 +23,12 @@
        	<!-- ACCESO USUARIO Y ADMIN-->
         <% if ((current_user.role? :admin) || (current_user.role? :participante))then %>
         
-        	<% @participante = Participante.find(current_user.id) %>
-        	<% @equipo = Equipo.where(:participante_id => @participante.id).first %>
+        	<% @equipo = current_user.equipo %>
 	        <li class="dropdown">
 	          <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Mi GranDT<b class="caret"></b></a>
 	          <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
 	            <li><%=link_to "Equipos", equipos_path, :tabindex => "-1"%></li>
 	            <li><%=link_to "Elegir Libre", :tabindex => "-1"%></li>
-	          </ul>
-	        </li>
-
-	        <li class="dropdown">
-	          <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Equipo por Fecha<b class="caret"></b></a>
-	          <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
-	            <li><%=link_to "Fecha 1", :tabindex => "-1"%></li>
-	            <li><%=link_to "Fecha 2", :tabindex => "-1"%></li>
-	            <li><%=link_to "Fecha 3", :tabindex => "-1"%></li>
-	            <li><%=link_to "Fecha 4", :tabindex => "-1"%></li>
-	            <li><%=link_to "Fecha 5", :tabindex => "-1"%></li>
-	            <li><%=link_to "Fecha 6", :tabindex => "-1"%></li>
-	            <li><%=link_to "Fecha 7", :tabindex => "-1"%></li>
-	            <li><%=link_to "Fecha 8", :tabindex => "-1"%></li>
-	            <li><%=link_to "Fecha 9", :tabindex => "-1"%></li>
-	            <li><%=link_to "Fecha 10", :tabindex => "-1"%></li>
-	            <li><%=link_to "Fecha 11", :tabindex => "-1"%></li>
-	            <li><%=link_to "Fecha 12", :tabindex => "-1"%></li>
-	            <li><%=link_to "Fecha 13", :tabindex => "-1"%></li>
-	            <li><%=link_to "Fecha 14", :tabindex => "-1"%></li>
-	            <li><%=link_to "Fecha 15", :tabindex => "-1"%></li>
-	            <li><%=link_to "Fecha 16", :tabindex => "-1"%></li>
-	            <li><%=link_to "Fecha 17", :tabindex => "-1"%></li>
-	            <li><%=link_to "Fecha 18", :tabindex => "-1"%></li>
-	            <li><%=link_to "Fecha 19", :tabindex => "-1"%></li>
 	          </ul>
 	        </li>
 

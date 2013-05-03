@@ -1,0 +1,33 @@
+
+
+<div class="row">
+  <div class="span12">
+    <div class="row">
+      <div class="span6">
+      	<span class="label label-info"> DISPONIBLES </span></br></br>
+      	<ul>
+      	<% @je.all.each do |j| %>
+
+      		<li class="draggable">
+      			<span class="label label-success"> <%=j.posicion %> - <%= j %> </span>
+      		</li>
+
+      	<% end %> 
+        </ul>
+
+      </div>
+      <div class="span6">
+      	<span class="label label-info"> TITULARES </span>
+      	
+      	<form>
+      		<div class="droppable">
+
+      		</div></br>	
+
+      		<input type="submit" name="confirmar" value="confirmar equipo">
+      	</form>
+      
+      </div>
+    </div>
+  </div>
+</div>

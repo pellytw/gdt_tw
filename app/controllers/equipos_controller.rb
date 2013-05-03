@@ -122,5 +122,12 @@ class EquiposController < ApplicationController
 
   end
 
+  def equipo_fecha
+
+    @je = current_user.jugador
+
+  end
+
+
 
 end

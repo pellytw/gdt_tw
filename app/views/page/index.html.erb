@@ -2,11 +2,18 @@
   <h1>Bienvenido</h1>
   <p>Gran DT Trelew</p>
   <p>
-  	<% @participante = Participante.find(current_user.id) %>
-    <% @equipo = Equipo.where(:participante_id => @participante.id).first %>
-    <a class="btn btn-primary btn-large" href="<%=url_for "equipos"%>/<%=@equipo.id%>">
-      ir a mi equipo
-    </a>
+      <% if user_signed_in? then %>
+
+        <!-- ACCESO USUARIO Y ADMIN-->
+        <% if ((current_user.role? :admin) || (current_user.role? :participante))then %>
+        	<% @equipo = current_user.equipo %>
+          <p align="right">
+            <a class="btn btn-primary btn-large" href="<%=url_for "equipos"%>/<%=@equipo.id%>">
+              ir a mi equipo
+            </a>
+          </p>
+        <% end %>
+      <% end %>
   </p>
   <p align="center"><%=link_to image_tag("tactica.jpg")%></p>
 </div>

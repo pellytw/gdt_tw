@@ -3,10 +3,20 @@
 
 
 <h2><div class="alert alert-info" align="center"><strong><p><%= @equipo.nombre %></p></strong></div></h2>
-  
-<a class="btn btn-success btn-large" href="<%=url_for "equipos"%>/<%=@equipo.id%>">
-   Armar equipo fecha actual
-</a>
+
+<% if ((current_user.role? :admin) || (current_user.role? :participante))then %>
+
+      <a href="<%=url_for equipos_cargar_equipo_path%>/<%= @equipo.id%>" class="btn btn-success"><i class="icon-plus"></i>  Cargar Jugadores Plantel</a></br></br></br>
+      <!-- aca controlamos que el equipo a armar corresponda al del usuario logueado -->
+      <% if current_user.equipo.id == @equipo.id then %>
+          <a class="btn btn-success" href="<%=url_for "equipo_fecha"%>">
+          Armar equipo fecha actual</a>
+      <% end %>    
+<% else %>
+  <a class="btn btn-success" href="<%=url_for "equipo_fecha"%>">
+   Armar equipo fecha actual</a>
+<% end %>
+
 
 <table class="table">
   
