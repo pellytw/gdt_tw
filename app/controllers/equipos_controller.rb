@@ -84,6 +84,7 @@ class EquiposController < ApplicationController
 
   def agregar_jugadores
     
+    #el idEquipo es el id del Equipo del participante. No es el club del jugador
     @idEquipo = params[:id_equipo] 
 
     if @idEquipo then 
