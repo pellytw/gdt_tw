@@ -8,8 +8,8 @@
       	<ul>
       	<span class="label label-inverse">Arqueros</span>
       	<% @je_arqueros.each do |ja| %>
-      		<label id="draggable_arqueros" class="draggable">
-      			<span class="label label-success"> <%=ja.club %> - <%= ja %> </span>
+      		<label  id="<%=ja.id%>" class="draggable">
+      			<span class="label label-success" > <%=ja.club %> - <%= ja %> </span>
       		</label>
       	<% end %> 
       	<span class="label label-inverse">Defensores centrales</span>
@@ -50,7 +50,7 @@
       	
       	<form>
       		<label> Arquero:  </label>
-      		<div class="droppable" id="resizable" name="arquero" >
+      		<div class="droppable" id="soltable_arqueros" name="arquero" >
 
       		</div>	      		
       		<label> Defensores centrales:  </label>
@@ -81,3 +81,30 @@
     </div>
   </div>
 </div>
+
+      
+      <!-- aca sólo permitimos que el arquero sea arrastrado a su posicion -->
+
+      <% @je_arqueros.each do |ja| %>
+
+            <script type="text/javascript">
+
+               $(document).ready(function(){ 
+
+                      $("#soltable_arqueros").droppable({
+                          drop: function( evento, ui ) {
+                              var draggable = ui.draggable
+                              var draggableId = ui.draggable.attr("id");
+                              
+                              // var algo = ui.draggable.find("a").attr("id")
+                              ui.draggable.remove()
+                              $(this).append("<input type='hidden' value="+ <%=ja.id%> +"><span class='label label-info'>" + draggable.text() + "</span>");
+                        }
+                        });
+
+                      $("#<%=ja.id%>").draggable();
+                  })
+
+            </script>
+
+      <% end %>

@@ -1,6 +1,5 @@
 <form action="<%= url_for :controller =>  "equipos", :action => "agregar_jugadores" %>">
 
-    <span class="label label-important">Jugadores elegidos hasta el momento: </span>
     <p class="lead">ARQUEROS</p>
     <ul>
     <% @arqueros = Jugador.where("posicion_id=? and disponible=?",  Posicion.where(:nombre => "ARQUERO").first.id, true) %>
