@@ -8,13 +8,13 @@
       	<ul>
       	<span class="label label-inverse">Arqueros</span>
       	<% @je_arqueros.each do |ja| %>
-      		<label  id="<%=ja.id%>" class="draggable">
+      		<label  id="<%=ja.id%>" class="arquero">
       			<span class="label label-success" > <%=ja.club %> - <%= ja %> </span>
       		</label>
       	<% end %> 
       	<span class="label label-inverse">Defensores centrales</span>
       	<% @je_defensores_centrales.each do |jdc| %>
-      		<label id="<%=jdc.id%>" class="draggable">
+      		<label id="<%=jdc.id%>" class="defensor_central">
       			<span class="label label-success"> <%=jdc.club %> - <%= jdc %> </span>
       		</label>
       	<% end %> 
@@ -95,15 +95,43 @@
 
                       $("#soltable_arqueros").droppable({
 
-                         
+                           accept: ".arquero", 
 
-                          drop: function( evento, ui ) {
+                           drop: function( evento, ui ) {
                               var draggable = ui.draggable
                               var draggableId = ui.draggable.attr("id");
                               
                               // var algo = ui.draggable.find("a").attr("id")
                               ui.draggable.remove()
                               $(this).append("<input type='hidden' value="+ <%=ja.id%> +"><span class='label label-info'>" + draggable.text() + "</span>");
+
+                        }
+                        });
+                  })
+
+            </script>
+
+      <% end %>
+
+      <% @je_defensores_centrales.each do |jdc| %>
+
+            <script type="text/javascript">
+
+               $(function() { 
+
+                      $("#<%=jdc.id%>").draggable();
+
+                      $("#soltable_defensores_centrales").droppable({
+
+                           accept: ".defensor_central",
+
+                           drop: function( evento, ui ) {
+                              var draggable = ui.draggable
+                              var draggableId = ui.draggable.attr("id");
+                              
+                              // var algo = ui.draggable.find("a").attr("id")
+                              ui.draggable.remove()
+                              $(this).append("<input type='hidden' value="+ <%=jdc.id%> +"><span class='label label-info'>" + draggable.text() + "</span>");
 
                         }
                         });
