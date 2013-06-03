@@ -14,31 +14,31 @@
       	<% end %> 
       	<span class="label label-inverse">Defensores centrales</span>
       	<% @je_defensores_centrales.each do |jdc| %>
-      		<label id="draggable_defensores_centrales" class="draggable">
+      		<label id="<%=jdc.id%>" class="draggable">
       			<span class="label label-success"> <%=jdc.club %> - <%= jdc %> </span>
       		</label>
       	<% end %> 
       	<span class="label label-inverse">Defensores laterales</span>
       	<% @je_defensores_laterales.each do |jdl| %>
-      		<label id="draggable_defensores_laterales" class="draggable">
+      		<label id="<%=jdl.id%>" class="draggable">
       			<span class="label label-success"> <%=jdl.club %> - <%= jdl %> </span>
       		</label>
       	<% end %>
       	<span class="label label-inverse">Volantes centrales</span>
       	<% @je_volantes_centrales.each do |jvc| %>
-      		<label id="draggable_volantes_centrales" class="draggable">
+      		<label id="<%=jvc.id%>" class="draggable">
       			<span class="label label-success"> <%=jvc.club %> - <%= jvc %> </span>
       		</label>
       	<% end %> 
       	<span class="label label-inverse">Volantes laterales</span>
       	<% @je_volantes_laterales.each do |jvl| %>
-      		<label id="draggable_volantes_laterales" class="draggable">
+      		<label id="<%=jvl.id%>" class="draggable">
       			<span class="label label-success"> <%=jvl.club %> - <%= jvl %> </span>
       		</label>
       	<% end %>
       	<span class="label label-inverse">Delanteros</span>
       	<% @je_delanteros.each do |jd| %>
-      		<label id="draggable_delanteros" class="draggable">
+      		<label id="<%=jd.id%>" class="draggable">
       			<span class="label label-success"> <%=jd.club %> - <%= jd %> </span>
       		</label>
       	<% end %>
@@ -54,23 +54,23 @@
 
       		</div>	      		
       		<label> Defensores centrales:  </label>
-      		<div class="droppable" id="resizable" name="defensores_centrales">
+      		<div class="droppable" id="soltable_defensores_centrales" name="defensores_centrales">
 
       		</div>
       		<label> Defensores laterales:  </label>
-      		<div class="droppable" id="resizable" name="defensores_laterales">
+      		<div class="droppable" id="soltable_defensores_laterales" name="defensores_laterales">
 
       		</div>
       		<label> Volantes centrales:  </label>
-      		<div class="droppable" id="resizable" name="volantes_centrales">
+      		<div class="droppable" id="soltable_volantes_centrales" name="volantes_centrales">
 
       		</div>
       		<label> Volantes laterales:  </label>
-      		<div class="droppable" id="resizable" name="volantes_laterales">
+      		<div class="droppable" id="soltable_volantes_laterales" name="volantes_laterales">
 
       		</div>
       		<label> Delanteros:  </label>
-      		<div class="droppable" id="resizable" name="delanteros">
+      		<div class="droppable" id="soltable_delanteros" name="delanteros">
 
       		</div></br>
 
@@ -89,9 +89,14 @@
 
             <script type="text/javascript">
 
-               $(document).ready(function(){ 
+               $(function() { 
+
+                      $("#<%=ja.id%>").draggable();
 
                       $("#soltable_arqueros").droppable({
+
+                         
+
                           drop: function( evento, ui ) {
                               var draggable = ui.draggable
                               var draggableId = ui.draggable.attr("id");
@@ -99,10 +104,9 @@
                               // var algo = ui.draggable.find("a").attr("id")
                               ui.draggable.remove()
                               $(this).append("<input type='hidden' value="+ <%=ja.id%> +"><span class='label label-info'>" + draggable.text() + "</span>");
+
                         }
                         });
-
-                      $("#<%=ja.id%>").draggable();
                   })
 
             </script>

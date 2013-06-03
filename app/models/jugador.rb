@@ -10,4 +10,8 @@ class Jugador < ActiveRecord::Base
   	self.nombres
   end
 
+  def display_jugadors
+    self.id.to_s + ' - ' + self.nombres + ' - Club: ' + self.club.to_s    
+  end
+
 end

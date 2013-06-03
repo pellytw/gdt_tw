@@ -4,18 +4,18 @@
   <tr>
     <th>Nombre</th>
     <th>Participante</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <% if can? :read, Equipo %><th></th><% end %>
+    <% if can? :update, Equipo %><th></th><% end %>
+    <% if can? :destroy, Equipo %><th></th><% end %>
   </tr>
 
 <% @equipos.each do |equipo| %>
   <tr>
     <td><%= equipo.nombre %></td>
     <td><%= equipo.participante %></td>
-    <td><%= link_to 'Ver', equipo %></td>
-    <td><%= link_to 'Editar', edit_equipo_path(equipo) %></td>
-    <td><%= link_to 'Eliminar', equipo, method: :delete, data: { confirm: 'Está seguro que desea eliminar?' } %></td>
+    <% if can? :read, Equipo %> <td><%= link_to 'Ver', equipo %></td> <% end %>
+    <% if can? :update, Equipo %> <td><%= link_to 'Editar', edit_equipo_path(equipo) %></td> <% end %>
+    <% if can? :destroy, Equipo %> <td><%= link_to 'Eliminar', equipo, method: :delete, data: { confirm: 'Está seguro que desea eliminar?' } %></td><% end %>
   </tr>
 <% end %>
 </table>

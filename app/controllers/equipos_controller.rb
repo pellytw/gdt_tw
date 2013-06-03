@@ -1,4 +1,8 @@
 class EquiposController < ApplicationController
+  before_filter :authenticate_user!
+  load_and_authorize_resource
+
+autocomplete :jugador, :nombres, :display_value => :display_jugadors, :full => true
   # GET /equipos
   # GET /equipos.json
   def index

@@ -1,4 +1,6 @@
 class TacticasController < ApplicationController
+  before_filter :authenticate_user!
+  load_and_authorize_resource
   # GET /tacticas
   # GET /tacticas.json
   def index

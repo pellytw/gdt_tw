@@ -44,8 +44,10 @@ Mysecurity::Application.routes.draw do
 
   resources :fechas
 
-  resources :equipos
-
+  resources :equipos do
+    get :autocomplete_jugador_nombres, :on => :collection
+  end
+  
   resources :participantes
 
   resources :role_permissions
