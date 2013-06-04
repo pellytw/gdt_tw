@@ -20,25 +20,25 @@
       	<% end %> 
       	<span class="label label-inverse">Defensores laterales</span>
       	<% @je_defensores_laterales.each do |jdl| %>
-      		<label id="<%=jdl.id%>" class="draggable">
+      		<label id="<%=jdl.id%>" class="defensor_lateral">
       			<span class="label label-success"> <%=jdl.club %> - <%= jdl %> </span>
       		</label>
       	<% end %>
       	<span class="label label-inverse">Volantes centrales</span>
       	<% @je_volantes_centrales.each do |jvc| %>
-      		<label id="<%=jvc.id%>" class="draggable">
+      		<label id="<%=jvc.id%>" class="volante_central">
       			<span class="label label-success"> <%=jvc.club %> - <%= jvc %> </span>
       		</label>
       	<% end %> 
       	<span class="label label-inverse">Volantes laterales</span>
       	<% @je_volantes_laterales.each do |jvl| %>
-      		<label id="<%=jvl.id%>" class="draggable">
+      		<label id="<%=jvl.id%>" class="volante_lateral">
       			<span class="label label-success"> <%=jvl.club %> - <%= jvl %> </span>
       		</label>
       	<% end %>
       	<span class="label label-inverse">Delanteros</span>
       	<% @je_delanteros.each do |jd| %>
-      		<label id="<%=jd.id%>" class="draggable">
+      		<label id="<%=jd.id%>" class="delantero">
       			<span class="label label-success"> <%=jd.club %> - <%= jd %> </span>
       		</label>
       	<% end %>
@@ -113,6 +113,8 @@
 
       <% end %>
 
+      
+
       <% @je_defensores_centrales.each do |jdc| %>
 
             <script type="text/javascript">
@@ -132,6 +134,126 @@
                               // var algo = ui.draggable.find("a").attr("id")
                               ui.draggable.remove()
                               $(this).append("<input type='hidden' value="+ <%=jdc.id%> +"><span class='label label-info'>" + draggable.text() + "</span>");
+
+                        }
+                        });
+                  })
+
+            </script>
+
+      <% end %>
+
+
+
+      <% @je_defensores_laterales.each do |jdl| %>
+
+            <script type="text/javascript">
+
+               $(function() { 
+
+                      $("#<%=jdl.id%>").draggable();
+
+                      $("#soltable_defensores_laterales").droppable({
+
+                           accept: ".defensor_lateral",
+
+                           drop: function( evento, ui ) {
+                              var draggable = ui.draggable
+                              var draggableId = ui.draggable.attr("id");
+                              
+                              // var algo = ui.draggable.find("a").attr("id")
+                              ui.draggable.remove()
+                              $(this).append("<input type='hidden' value="+ <%=jdl.id%> +"><span class='label label-info'>" + draggable.text() + "</span>");
+
+                        }
+                        });
+                  })
+
+            </script>
+
+      <% end %>
+
+
+
+      <% @je_volantes_centrales.each do |jvc| %>
+
+            <script type="text/javascript">
+
+               $(function() { 
+
+                      $("#<%=jvc.id%>").draggable();
+
+                      $("#soltable_volantes_centrales").droppable({
+
+                           accept: ".volante_central",
+
+                           drop: function( evento, ui ) {
+                              var draggable = ui.draggable
+                              var draggableId = ui.draggable.attr("id");
+                              
+                              // var algo = ui.draggable.find("a").attr("id")
+                              ui.draggable.remove()
+                              $(this).append("<input type='hidden' value="+ <%=jvc.id%> +"><span class='label label-info'>" + draggable.text() + "</span>");
+
+                        }
+                        });
+                  })
+
+            </script>
+
+      <% end %>
+
+
+
+      <% @je_volantes_laterales.each do |jvl| %>
+
+            <script type="text/javascript">
+
+               $(function() { 
+
+                      $("#<%=jvl.id%>").draggable();
+
+                      $("#soltable_volantes_laterales").droppable({
+
+                           accept: ".volante_lateral",
+
+                           drop: function( evento, ui ) {
+                              var draggable = ui.draggable
+                              var draggableId = ui.draggable.attr("id");
+                              
+                              // var algo = ui.draggable.find("a").attr("id")
+                              ui.draggable.remove()
+                              $(this).append("<input type='hidden' value="+ <%=jvl.id%> +"><span class='label label-info'>" + draggable.text() + "</span>");
+
+                        }
+                        });
+                  })
+
+            </script>
+
+      <% end %>
+
+
+
+      <% @je_delanteros.each do |jd| %>
+
+            <script type="text/javascript">
+
+               $(function() { 
+
+                      $("#<%=jd.id%>").draggable();
+
+                      $("#soltable_delanteros").droppable({
+
+                           accept: ".delantero",
+
+                           drop: function( evento, ui ) {
+                              var draggable = ui.draggable
+                              var draggableId = ui.draggable.attr("id");
+                              
+                              // var algo = ui.draggable.find("a").attr("id")
+                              ui.draggable.remove()
+                              $(this).append("<input type='hidden' value="+ <%=jd.id%> +"><span class='label label-info'>" + draggable.text() + "</span>");
 
                         }
                         });
