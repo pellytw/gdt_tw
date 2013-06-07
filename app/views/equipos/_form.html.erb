@@ -130,12 +130,15 @@
         <h3 id="myModalLabel">Reemplazar Jugador</h3>
       </div>
       <div class="modal-body">
-         <input data-autocomplete="/equipos/autocomplete_jugador_nombres" data-id-element="#id" id="jugador_id" name="jugador_id" size="30" type="text" />
+        <form action="<%=url_for :controller => "equipos", :action => "reemplazar_jugador"%>" >
+          <input data-autocomplete="/equipos/autocomplete_jugador_nombres" data-id-element="#id" id="jugador_id" name="jugador_id" size="30" type="text" />
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+          <button class="btn btn-primary" type="submit" value="reemplazar jugador">Confirmar</button>
+        </form>
       </div>
-      <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        <button class="btn btn-primary">Save changes</button>
-      </div>
+        <div class="modal-footer">
+          
+        </div>
     </div>
 
   </div>

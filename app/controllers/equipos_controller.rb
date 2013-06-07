@@ -139,6 +139,12 @@ autocomplete :jugador, :nombres, :display_value => :display_jugadors, :full => t
 
   end
 
+  def reemplazar_jugador
+
+    debugger
+
+  end
+
 
 
 end

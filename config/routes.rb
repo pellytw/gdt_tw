@@ -14,6 +14,8 @@ Mysecurity::Application.routes.draw do
 
   get "equipos/equipo_fecha" => 'equipos#equipo_fecha'
 
+  get "equipos/reemplazar_jugador" => 'equipos#reemplazar_jugador'
+
 
   #match '/equipos/agregar_equipo', :controller => 'equipos', :action => 'agregar_equipo'
   #match 'equipos/agregar_equipo' => 'equipos#agregar_equipo'
