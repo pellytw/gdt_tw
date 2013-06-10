@@ -80,11 +80,16 @@
       
       <!-- aca sólo permitimos que el arquero sea arrastrado a su posicion -->
 
+      <% @contador_arqueros = 0 %>
+
       <% @je_arqueros.each do |ja| %>
 
             <script type="text/javascript">
 
                $(function() { 
+
+                      var limit = 1;
+                      var counter = 0;
 
                       $("#<%=ja.id%>").draggable({ revert: "invalid" });
 
@@ -93,12 +98,21 @@
                            accept: ".arquero", 
 
                            drop: function( evento, ui ) {
-                              var draggable = ui.draggable
-                              var draggableId = ui.draggable.attr("id");
-                              
-                              // var algo = ui.draggable.find("a").attr("id")
-                              ui.draggable.remove()
-                              $(this).append("<input type='hidden' value="+ <%=ja.id%> +"><span class='label label-info'>" + draggable.text() + "</span>");
+
+                              if (counter >= limit) {
+                                alert('no podes poner mas de un arquero payaso!');
+                                $("#<%=ja.id%>").draggable({ revert: true })
+                                // $(this).droppable("disable");
+                              }else {
+                                 var draggable = ui.draggable
+                                 var draggableId = ui.draggable.attr("id");
+                                 
+                                 // var algo = ui.draggable.find("a").attr("id")
+                                 ui.draggable.remove()
+                                 $(this).append("<input type='hidden' value="+ <%=ja.id%> +"><span class='label label-info'>" + draggable.text() + "</span>");
+                              }        
+
+                              counter++;                      
 
                         }
                         });
